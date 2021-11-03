@@ -103,11 +103,31 @@ const app = new Vue({
                 this.contacts[this.c].messages.push(this.newMessage);
             }
 
+            this.answer();
+
             this.newMessage = {
                 date: new Date().toLocaleString(),
                 text: '',
                 status: 'sent',
             };
         },
+        answer() {
+            let t = this;
+            this.timer = setTimeout(function () {
+                t.newMessage = {
+                    date: new Date().toLocaleString(),
+                    text: 'ok',
+                    status: 'received',
+                };
+                if (t.newMessage.text != '') {
+                    t.contacts[t.c].messages.push(t.newMessage);
+                }
+                t.newMessage = {
+                    date: new Date().toLocaleString(),
+                    text: '',
+                    status: 'sent',
+                };
+            }, 1000);
+        }
     }
 });
