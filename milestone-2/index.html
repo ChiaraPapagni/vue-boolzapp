@@ -82,9 +82,9 @@
 
                 <div class="chats">
                     <div class="chat">
-                        <div v-for="message in contacts">
-                            <div class="messages bg_green">
-                                <p>{{message.messages[1]}}</p>
+                        <div v-for="(message, i) in contacts[c].messages">
+                            <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
+                                <p>{{message.text}}</p>
                                 <p class="times">{{message.date}}</p>
                             </div>
                         </div>

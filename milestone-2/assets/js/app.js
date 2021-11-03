@@ -91,7 +91,10 @@ const app = new Vue({
     },
     methods: {
         changeChat() {
-            this.contacts.visible = false;
+            this.c++;
         },
     },
+    created: function () {
+        console.log(this.contacts[this.c].messages.length - 1);
+    }
 });
