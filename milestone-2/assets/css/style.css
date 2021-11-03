@@ -10,7 +10,7 @@ Utility
 ****************/
 body {
     background-color: #D6DBD8;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Verdana', Arial, Helvetica, sans-serif;
 }
 
 /****************
@@ -155,29 +155,37 @@ main {
     padding-top: 0.5rem;
 }
 
+/* Chat */
 .chat {}
+
+.messages {
+    width: fit-content;
+    border-radius: 10px;
+    padding: 1rem 1.1rem 0 1.1rem;
+}
+
+.times {
+    font-size: 0.8rem;
+    color: #ABABAB;
+    margin-top: 0.3rem;
+    padding-bottom: 0.4rem;
+}
 
 .bg_green {
     background-color: #D5F9BA;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: auto;
+    text-align: right;
 }
 
 .bg_white {
     background-color: #FFFFFF;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    text-align: left;
 }
 
-ul {
-    list-style: none;
-}
-
-ul>li .messages {
-
-    position: absolute;
-    top: 8rem;
-    right: 2rem;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 0.5rem;
-}
 
 .message_bar {
     display: flex;
