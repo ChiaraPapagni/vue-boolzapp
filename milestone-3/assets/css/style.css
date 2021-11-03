@@ -113,13 +113,20 @@ main {
     background-color: #fff;
     border: 1px solid #EEE;
     border-radius: 3px;
-    padding: 0.7rem;
     color: #777;
+    padding-left: 1rem;
 }
 
 .search_txt {
     font-size: 0.95rem;
     margin-left: 1rem;
+}
+
+.search input {
+    width: 270px;
+    border: none;
+    padding: 0.7rem;
+    outline: none;
 }
 
 .chat_users {
@@ -212,4 +219,5 @@ main {
     border-radius: 5px;
     padding: 1rem;
     margin: 0 1rem;
+    outline: none;
 }
