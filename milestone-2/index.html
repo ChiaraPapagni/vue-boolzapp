@@ -53,8 +53,8 @@
                 <!-- /.search -->
 
                 <div class="chat_users">
-                    <div class="chat_user" v-for="user in contacts" @click="changeChat">
-                        <img :src="user.avatar" alt="user.name" class="user_image">
+                    <div class="chat_user" v-for="(user, i) in contacts" @click="changeChat(i)">
+                        <img :src="'./assets/img/avatar' + user.avatar + '.jpg'" alt="user.name" class="user_image">
                         <p>{{user.name}}</p>
                     </div>
                 </div>
@@ -66,7 +66,8 @@
             <div class="container">
                 <div class="container_header">
                     <div class="user">
-                        <img :src="contacts[c].avatar" alt="Michele" class="user_image">
+                        <img :src="'./assets/img/avatar' + contacts[c].avatar + '.jpg'" alt="contacts[c].name"
+                            class="user_image">
                         <div class="info_user">
                             <p>{{contacts[c].name}}</p>
                             <p class="last_access">Ultimo accesso oggi alle</p>
@@ -88,17 +89,6 @@
                                 <p class="times">{{message.date}}</p>
                             </div>
                         </div>
-
-
-                        <!-- <div class="messages bg_green">
-                            <p>Ricordati di dargli da mangiare</p>
-                            <p class="times">10/01/2020</p>
-                        </div>
-
-                        <div class="messages bg_white">
-                            <p>Tutto fatto</p>
-                            <p class="times">10/01/2020</p>
-                        </div> -->
                         <!-- /.messages -->
                     </div>
                 </div>
