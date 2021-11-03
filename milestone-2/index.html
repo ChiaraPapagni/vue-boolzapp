@@ -53,7 +53,7 @@
                 <!-- /.search -->
 
                 <div class="chat_users">
-                    <div class="chat_user" v-for="user in contacts">
+                    <div class="chat_user" v-for="user in contacts" @click="changeChat">
                         <img :src="user.avatar" alt="user.name" class="user_image">
                         <p>{{user.name}}</p>
                     </div>
@@ -80,25 +80,29 @@
                 </div>
                 <!-- /.container_header -->
 
-                <div class="chat">
+                <div class="chats">
+                    <div class="chat">
+                        <div v-for="message in contacts">
+                            <div class="messages bg_green">
+                                <p>{{message.messages[1]}}</p>
+                                <p class="times">{{message.date}}</p>
+                            </div>
+                        </div>
 
-                    <div class="messages bg_green">
-                        <p>Hai portato a spasso il cane?</p>
-                        <p class="times">10/01/2020</p>
-                    </div>
 
-                    <div class="messages bg_green">
-                        <p>Ricordati di dargli da mangiare</p>
-                        <p class="times">10/01/2020</p>
-                    </div>
+                        <!-- <div class="messages bg_green">
+                            <p>Ricordati di dargli da mangiare</p>
+                            <p class="times">10/01/2020</p>
+                        </div>
 
-                    <div class="messages bg_white">
-                        <p>Tutto fatto</p>
-                        <p class="times">10/01/2020</p>
+                        <div class="messages bg_white">
+                            <p>Tutto fatto</p>
+                            <p class="times">10/01/2020</p>
+                        </div> -->
+                        <!-- /.messages -->
                     </div>
-                    <!-- /.messages -->
                 </div>
-                <!-- /.chat -->
+                <!-- /.chats -->
 
                 <div class="message_bar">
                     <i class="far fa-smile"></i>

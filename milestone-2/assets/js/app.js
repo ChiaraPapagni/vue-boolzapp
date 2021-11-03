@@ -86,7 +86,12 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        c: 0,
     },
-    methods: {},
+    methods: {
+        changeChat() {
+            this.contacts.visible = false;
+        },
+    },
 });
