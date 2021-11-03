@@ -1,5 +1,81 @@
+/* Reset Rules */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/****************
+Utility
+****************/
+body {
+    background-color: #D6DBD8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.d_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col_30 {
+    width: 40%;
+    height: 100%;
+    border-right: 1px solid #DBDBDB;
+}
+
+.col_70 {
+    width: 60%;
+}
+
+.icons {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.icons i {
+    margin: 0.5rem;
+}
+
+/****************
+Header
+****************/
+header {
+    height: 120px;
+    background-color: #009688;
+}
+
+/****************
+Main
+****************/
+.container {
+    width: 90%;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container_header {
+    height: calc(120px - 1rem);
+    background-color: #EAEAEA;
+
+}
+
+.user_image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.container_header .icons {
+    color: #B1B1B1;
+}
+
+.last_access {
+    font-size: 0.9rem;
+    color: #6D787D;
+    padding-top: 0.5rem;
 }
