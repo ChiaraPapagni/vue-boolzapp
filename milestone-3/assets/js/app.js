@@ -91,7 +91,7 @@ const app = new Vue({
         newMessage: {
             date: new Date().toLocaleString(),
             text: '',
-            status: 'sent'
+            status: 'sent',
         },
     },
     methods: {
@@ -99,9 +99,15 @@ const app = new Vue({
             this.c = i;
         },
         addMessage() {
-            this.contacts[this.c].messages.push(this.newMessage);
-            this.newMessage = {};
-            console.log(this.contacts[this.c].messages);
+            if (this.newMessage.text != '') {
+                this.contacts[this.c].messages.push(this.newMessage);
+            }
+
+            this.newMessage = {
+                date: new Date().toLocaleString(),
+                text: '',
+                status: 'sent',
+            };
         },
     }
 });

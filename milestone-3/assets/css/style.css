@@ -123,9 +123,9 @@ main {
 }
 
 .chat_users {
-
-    background-color: #FFF;
     overflow-y: scroll;
+    height: 348px;
+    background-color: #FFF;
 }
 
 .chat_user {
@@ -156,7 +156,10 @@ main {
 }
 
 /* Chat */
-.chat {}
+.chats {
+    overflow-y: scroll;
+    height: 426px;
+}
 
 .messages {
     width: fit-content;
