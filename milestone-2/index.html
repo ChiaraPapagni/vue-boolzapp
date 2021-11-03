@@ -66,9 +66,9 @@
             <div class="container">
                 <div class="container_header">
                     <div class="user">
-                        <img src="./assets/img/avatar_1.jpg" alt="Michele" class="user_image">
+                        <img :src="contacts[c].avatar" alt="Michele" class="user_image">
                         <div class="info_user">
-                            <p>Michele</p>
+                            <p>{{contacts[c].name}}</p>
                             <p class="last_access">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
 
                 <div class="chats">
                     <div class="chat">
-                        <div v-for="(message, i) in contacts[c].messages">
+                        <div v-for="message in contacts[c].messages">
                             <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
                                 <p>{{message.text}}</p>
                                 <p class="times">{{message.date}}</p>

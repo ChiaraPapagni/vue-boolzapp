@@ -93,8 +93,5 @@ const app = new Vue({
         changeChat() {
             this.c++;
         },
-    },
-    created: function () {
-        console.log(this.contacts[this.c].messages.length - 1);
     }
 });
