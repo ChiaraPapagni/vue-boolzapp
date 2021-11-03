@@ -19,13 +19,13 @@ body {
     align-items: center;
 }
 
-.col_30 {
+.col_40 {
     width: 40%;
     height: 100%;
     border-right: 1px solid #DBDBDB;
 }
 
-.col_70 {
+.col_60 {
     width: 60%;
 }
 
@@ -78,4 +78,99 @@ Main
     font-size: 0.9rem;
     color: #6D787D;
     padding-top: 0.5rem;
+}
+
+.notifications {
+    background-color: #8EDAFC;
+    padding: 1.2rem 0;
+    justify-content: start;
+}
+
+.notifications i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #FFF;
+    border-radius: 50%;
+    color: #8EDAFC;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+.desktop_notifications {
+    font-size: 0.9rem;
+    color: #578194;
+    text-decoration: underline;
+    margin-top: 0.3rem;
+}
+
+.search {
+    background-color: #FAFAFA;
+    padding: 0.5rem;
+}
+
+.search_box {
+    width: 100%;
+    justify-content: start;
+    background-color: #fff;
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    padding: 0.7rem;
+    color: #777;
+}
+
+.search_txt {
+    font-size: 0.95rem;
+    margin-left: 1rem;
+}
+
+.chat_users {
+    background-color: #FFF;
+    overflow-y: scroll;
+}
+
+.chat_user {
+    justify-content: start;
+    border-bottom: 1px solid #EEE;
+}
+
+.chat_user img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.container_main {
+    background-image: url('/milestone-1/assets/img/mine.jpg');
+    overflow-y: scroll;
+}
+
+.chat {
+    position: relative;
+}
+
+.message_bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: calc(100% - 33.4%);
+    width: 100%;
+    background-color: #F3EEEA;
+    padding: 1rem;
+}
+
+.message_bar i {
+    font-size: 1.5rem;
+    color: #6B7376;
+}
+
+.message_bar input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0 1rem;
 }
