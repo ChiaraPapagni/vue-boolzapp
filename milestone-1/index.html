@@ -74,22 +74,11 @@
                     <!-- /.search -->
 
                     <div class="chat_users">
-                        <div class="chat_user d_flex">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
-                            <p>Michele</p>
+                        <div class="chat_user d_flex" v-for="user in contacts">
+                            <img :src="user.avatar" alt="user.name">
+                            <p>{{user.name}}</p>
                         </div>
-                        <div class="chat_user d_flex">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
-                            <p>Michele</p>
-                        </div>
-                        <div class="chat_user d_flex">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
-                            <p>Michele</p>
-                        </div>
-                        <div class="chat_user d_flex">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
-                            <p>Michele</p>
-                        </div>
+
                     </div>
                     <!-- /.chat_user -->
                 </div>
