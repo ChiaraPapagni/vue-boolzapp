@@ -24,6 +24,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                lastAccess: dayjs('10/01/2020 16:15:22').format('HH:mm'),
             },
             {
                 name: 'Fabio',
@@ -46,6 +47,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastAccess: dayjs('03/20/2020 16:37:22').format('HH:mm'),
             },
             {
                 name: 'Samuele',
@@ -68,6 +70,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                lastAccess: dayjs('03/28/2020 16:21:22').format('HH:mm'),
             },
             {
                 name: 'Luisa',
@@ -85,6 +88,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                lastAccess: dayjs('10/01/2020 15:58:22').format('HH:mm'),
             },
         ],
         c: 0,
@@ -94,11 +98,15 @@ const app = new Vue({
             status: 'sent',
         },
         search: '',
-        showMenu: false,
+        activeMessage: {
+            index: false,
+            show: false,
+        },
     },
     methods: {
         changeChat(i) {
             this.c = i;
+            console.log(this.contacts[this.c].messages[this.contacts[this.c].messages.length - 1].text);
         },
         addMessage() {
             if (this.newMessage.text != '') {
@@ -132,13 +140,20 @@ const app = new Vue({
             }, 1000);
         },
         dropdownMenu(i) {
-            if (this.c == i) { }
-            this.showMenu = !this.showMenu;
+            this.activeMessage.index = i;
 
+            if (this.activeMessage.index == i) {
+                this.activeMessage.index = true;
+                this.activeMessage.show = true;
+
+                if (this.activeMessage.index && this.activeMessage.show) {
+                    this.activeMessage.show = !this.activeMessage.show;
+                }
+            }
         },
         deleteMessage(i) {
             this.contacts[this.c].messages.splice(i, 1);
-            this.showMenu = !this.showMenu;
+            this.activeMessage.show = !this.activeMessage.show;
         }
     },
     computed: {

@@ -15,7 +15,9 @@ body {
             #009688 100px,
             #D6DBD8 100px,
             #D6DBD8 100%);
-    font-family: 'Verdana', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto',
+        sans-serif;
+    font-weight: 300;
 }
 
 .hidden {
@@ -56,6 +58,7 @@ main {
     align-items: center;
     height: calc(120px - 1rem);
     background-color: #EAEAEA;
+    font-weight: 400;
 }
 
 .user {
@@ -157,6 +160,30 @@ main {
     background-color: #EEE;
 }
 
+.info_chat {
+    width: 100%;
+    margin: 10px;
+    position: relative;
+}
+
+.chat_name {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.chat_last_date {
+    position: absolute;
+    top: 0.1rem;
+    right: 0;
+    font-size: 0.7rem;
+    color: #AAA;
+}
+
+.chat_last_message {
+    font-size: 0.85rem;
+    color: #333;
+}
+
 /* Container */
 .container {
     width: 70%;
@@ -169,6 +196,10 @@ main {
     align-items: center;
     height: calc(120px - 1rem);
     background-color: #EAEAEA;
+}
+
+.info_user {
+    font-weight: 400;
 }
 
 .last_access {
@@ -216,6 +247,7 @@ main {
 
 .messages i {
     position: absolute;
+    top: 5px;
     right: 10px;
     color: #888;
     visibility: hidden;
@@ -256,6 +288,7 @@ main {
     border-radius: 3px;
     box-shadow: 0px 0px 5px #aaa;
     padding: 5px 0;
+    z-index: 10;
 }
 
 .dropdown_menu a {
@@ -276,7 +309,7 @@ main {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 60%;
+    width: 70%;
     background-color: #F3EEEA;
     padding: 1rem;
 }

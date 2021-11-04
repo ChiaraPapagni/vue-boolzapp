@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoolzApp</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
@@ -58,8 +63,11 @@
                 <div class="chat_users">
                     <div class="chat_user" v-for="(user, i) in searchChat" @click="changeChat(i)">
                         <img :src="'./assets/img/avatar' + user.avatar + '.jpg'" alt="user.name" class="user_image">
-                        <p>{{user.name}}</p>
-                        <!-- <p>{{user.messages[user.messages.length].text}}</p> -->
+                        <div class="info_chat">
+                            <p class="chat_name">{{user.name}}</p>
+                            <p class="chat_last_date">{{user.messages[user.messages.length - 1].date}}</p>
+                            <p class="chat_last_message">{{user.messages[user.messages.length - 1].text}}</p>
+                        </div>
                     </div>
                 </div>
                 <!-- /.chat_user -->
@@ -74,7 +82,7 @@
                             class="user_image">
                         <div class="info_user">
                             <p>{{contacts[c].name}}</p>
-                            <p class="last_access">Ultimo accesso oggi alle</p>
+                            <p class="last_access">Ultimo accesso oggi alle {{contacts[c].lastAccess}}</p>
                         </div>
                     </div>
                     <div class="icons">
@@ -90,9 +98,8 @@
                         <div v-for="(message, i) in contacts[c].messages">
                             <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
                                 <div class="dropdown">
-                                    <i class="fas fa-chevron-down hidden chevron_down"
-                                        @click="dropdownMenu(message, i)"></i>
-                                    <div v-if="showMenu" class="dropdown_menu">
+                                    <i class="fas fa-chevron-down hidden chevron_down" @click="dropdownMenu(i)"></i>
+                                    <div v-if="activeMessage.index && activeMessage.show" class="dropdown_menu">
                                         <a href="#info">Message info</a>
                                         <a href="#" @click="deleteMessage(i)">Delete
                                             message</a>
