@@ -45,7 +45,7 @@ main {
 
 /* Sidebar */
 .sidebar {
-    width: 40%;
+    width: 30%;
     height: 100%;
     border-right: 1px solid #DBDBDB;
 }
@@ -127,12 +127,13 @@ main {
 }
 
 .search_txt {
+    width: 100%;
     font-size: 0.95rem;
     margin-left: 1rem;
 }
 
 .search input {
-    width: 270px;
+    width: 100%;
     border: none;
     padding: 0.7rem;
     outline: none;
@@ -158,7 +159,7 @@ main {
 
 /* Container */
 .container {
-    width: 60%;
+    width: 70%;
     background-image: url('/milestone-1/assets/img/mine.jpg');
 }
 
