@@ -106,7 +106,6 @@ const app = new Vue({
     methods: {
         changeChat(i) {
             this.c = i;
-            console.log(this.contacts[this.c].messages[this.contacts[this.c].messages.length - 1].text);
         },
         addMessage() {
             if (this.newMessage.text != '') {
