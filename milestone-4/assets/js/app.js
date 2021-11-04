@@ -94,7 +94,6 @@ const app = new Vue({
             status: 'sent',
         },
         search: '',
-        showMenu: false,
     },
     methods: {
         changeChat(i) {
@@ -130,13 +129,6 @@ const app = new Vue({
                     status: 'sent',
                 };
             }, 1000);
-        },
-        dropdownMenu(i) {
-            this.showMenu = !this.showMenu;
-        },
-        deleteMessage(i) {
-            this.contacts[this.c].messages.splice(i, 1);
-            this.showMenu = !this.showMenu;
         }
     },
     computed: {
@@ -144,6 +136,6 @@ const app = new Vue({
             return this.contacts.filter((user) => {
                 return user.name.toLowerCase().includes(this.search.toLowerCase());
             });
-        },
+        }
     }
 });
