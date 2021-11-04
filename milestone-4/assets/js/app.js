@@ -9,17 +9,17 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: dayjs('10/01/2020 15:30:55').format('HH:mm'),
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: dayjs('10/01/2020 15:50:00').format('HH:mm'),
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: dayjs('10/01/2020 16:15:22').format('HH:mm'),
                         text: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -31,17 +31,17 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '20/03/2020 16:30:00',
+                        date: dayjs('03/20/2020 16:30:00').format('HH:mm'),
                         text: 'Ciao come stai?',
                         status: 'sent'
                     },
                     {
-                        date: '20/03/2020 16:30:55',
+                        date: dayjs('03/20/2020 16:30:55').format('HH:mm'),
                         text: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                     },
                     {
-                        date: '20/03/2020 16:35:00',
+                        date: dayjs('03/20/2020 16:35:00').format('HH:mm'),
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                     }
@@ -53,17 +53,17 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '28/03/2020 10:10:40',
+                        date: dayjs('03/28/2020 10:10:40').format('HH:mm'),
                         text: 'La Marianna va in campagna',
                         status: 'received'
                     },
                     {
-                        date: '28/03/2020 10:20:10',
+                        date: dayjs('03/28/2020 10:20:10').format('HH:mm'),
                         text: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                     },
                     {
-                        date: '28/03/2020 16:15:22',
+                        date: dayjs('03/28/2020 16:15:22').format('HH:mm'),
                         text: 'Ah scusa!',
                         status: 'received'
                     }
@@ -75,12 +75,12 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: dayjs('10/01/2020 15:30:55').format('HH:mm'),
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: dayjs('10/01/2020 15:50:00').format('HH:mm'),
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     }
@@ -89,7 +89,7 @@ const app = new Vue({
         ],
         c: 0,
         newMessage: {
-            date: new Date().toLocaleString(),
+            date: new dayjs().format('HH:mm'),
             text: '',
             status: 'sent',
         },
@@ -108,7 +108,7 @@ const app = new Vue({
             this.answer();
 
             this.newMessage = {
-                date: new Date().toLocaleString(),
+                date: new dayjs().format('HH:mm'),
                 text: '',
                 status: 'sent',
             };
@@ -117,7 +117,7 @@ const app = new Vue({
             let t = this;
             this.timer = setTimeout(function () {
                 t.newMessage = {
-                    date: new Date().toLocaleString(),
+                    date: new dayjs().format('HH:mm'),
                     text: 'ok',
                     status: 'received',
                 };
@@ -125,7 +125,7 @@ const app = new Vue({
                     t.contacts[t.c].messages.push(t.newMessage);
                 }
                 t.newMessage = {
-                    date: new Date().toLocaleString(),
+                    date: new dayjs().format('HH:mm'),
                     text: '',
                     status: 'sent',
                 };
