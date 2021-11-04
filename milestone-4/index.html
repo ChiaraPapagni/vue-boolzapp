@@ -86,9 +86,17 @@
 
                 <div class="chats">
                     <div class="chat">
-                        <div v-for="message in contacts[c].messages">
+                        <div v-for="(message,i) in contacts[c].messages">
                             <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
-                                <p>{{message.text}}</p>
+                                <div class="dropdown">
+                                    <i class="fas fa-chevron-down hidden chevron_down" @click="dropdownMenu"></i>
+                                    <div v-if="showMenu" class="dropdown_menu">
+                                        <a href="#info">Message info</a>
+                                        <a href="#" @click="deleteMessage(i)">Delete message</a>
+                                    </div>
+                                </div>
+
+                                <p class="text">{{message.text}}</p>
                                 <p class="times">{{message.date}}</p>
                             </div>
                         </div>

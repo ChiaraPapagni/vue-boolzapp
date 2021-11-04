@@ -94,6 +94,7 @@ const app = new Vue({
             status: 'sent',
         },
         search: '',
+        showMenu: false,
     },
     methods: {
         changeChat(i) {
@@ -130,6 +131,13 @@ const app = new Vue({
                 };
             }, 1000);
         },
+        dropdownMenu(i) {
+            this.showMenu = !this.showMenu;
+        },
+        deleteMessage(i) {
+            this.contacts[this.c].messages.splice(i, 1);
+            this.showMenu = !this.showMenu;
+        }
     },
     computed: {
         searchChat() {

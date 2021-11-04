@@ -9,8 +9,17 @@
 Utility
 ****************/
 body {
-    background-color: #D6DBD8;
+    height: 100vh;
+    background-image: linear-gradient(to bottom,
+            #009688 0px,
+            #009688 100px,
+            #D6DBD8 100px,
+            #D6DBD8 100%);
     font-family: 'Verdana', Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+    display: none;
 }
 
 /****************
@@ -110,7 +119,7 @@ main {
     justify-content: start;
     align-items: center;
     width: 100%;
-    background-color: #fff;
+    background-color: #FFF;
     border: 1px solid #EEE;
     border-radius: 3px;
     color: #777;
@@ -131,7 +140,7 @@ main {
 
 .chat_users {
     overflow-y: scroll;
-    height: 348px;
+    height: 500px;
     background-color: #FFF;
 }
 
@@ -141,6 +150,10 @@ main {
     align-items: center;
     border-bottom: 1px solid #EEE;
     cursor: pointer;
+}
+
+.chat_user:hover {
+    background-color: #EEE;
 }
 
 /* Container */
@@ -166,37 +179,96 @@ main {
 /* Chat */
 .chats {
     overflow-y: scroll;
-    height: 426px;
+    height: 575px;
 }
 
 .messages {
     width: fit-content;
     border-radius: 10px;
-    padding: 1rem 1.1rem 0 1.1rem;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.text {
+    font-size: 0.9rem;
 }
 
 .times {
-    font-size: 0.8rem;
-    color: #ABABAB;
+    font-size: 0.7rem;
+    color: #AAA;
     margin-top: 0.3rem;
     padding-bottom: 0.4rem;
+    text-align: right;
 }
 
 .bg_green {
     background-color: #D5F9BA;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-right: 2rem;
     margin-left: auto;
-    text-align: right;
 }
 
 .bg_white {
     background-color: #FFFFFF;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-left: 2rem;
-    text-align: left;
 }
 
+.messages i {
+    position: absolute;
+    right: 10px;
+    color: #888;
+    visibility: hidden;
+}
+
+.bg_green .chevron_down {
+    background-color: #D5F9BA;
+}
+
+.bg_white .chevron_down {
+    background-color: #FFFFFF;
+}
+
+.messages:hover .hidden {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.chevron_down {
+    position: relative;
+}
+
+.bg_green .dropdown_menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
+
+.bg_white .dropdown_menu {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+}
+
+.dropdown_menu {
+    min-width: 140px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #aaa;
+    padding: 5px 0;
+}
+
+.dropdown_menu a {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #EEE;
+}
 
 .message_bar {
     display: flex;
