@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoolzApp</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="app">
+
+        <header id="site_header"></header>
+        <!-- /#site_header -->
+
+        <main id="site_main">
+
+            <div class="sidebar">
+                <div class="personal">
+                    <div class="user">
+                        <img src="./assets/img/avatar_io.jpg" alt="Nome Utente" class="user_image">
+                        <p>Nome Utente</p>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <!-- /.personal -->
+
+                <div class="notifications">
+                    <i class="fas fa-bell-slash"></i>
+                    <div>
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p class="desktop_notifications">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+                <!-- /.notifications -->
+
+                <div class="search">
+                    <div class="search_box">
+                        <i class="fas fa-search"></i>
+                        <p class="search_txt">
+                            <input type="search" name="search" id="search" v-model="search"
+                                placeholder="Cerca o inizia una nuova chat">
+                        </p>
+                    </div>
+                </div>
+                <!-- /.search -->
+
+                <div class="chat_users">
+                    <div class="chat_user" v-for="(user, i) in searchChat" @click="changeChat(i)">
+                        <img :src="'./assets/img/avatar' + user.avatar + '.jpg'" alt="user.name" class="user_image">
+                        <p>{{user.name}}</p>
+                        <!-- <p>{{user.messages[user.messages.length].text}}</p> -->
+                    </div>
+                </div>
+                <!-- /.chat_user -->
+
+            </div>
+            <!-- /.sidebar -->
+
+            <div class="container">
+                <div class="container_header">
+                    <div class="user">
+                        <img :src="'./assets/img/avatar' + contacts[c].avatar + '.jpg'" alt="contacts[c].name"
+                            class="user_image">
+                        <div class="info_user">
+                            <p>{{contacts[c].name}}</p>
+                            <p class="last_access">Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <!-- /.container_header -->
+
+                <div class="chats">
+                    <div class="chat">
+                        <div v-for="(message, i) in contacts[c].messages">
+                            <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
+                                <div class="dropdown">
+                                    <i class="fas fa-chevron-down hidden chevron_down"
+                                        @click="dropdownMenu(message, i)"></i>
+                                    <div v-if="showMenu" class="dropdown_menu">
+                                        <a href="#info">Message info</a>
+                                        <a href="#" @click="deleteMessage(i)">Delete
+                                            message</a>
+                                    </div>
+                                </div>
+                                <p class="text">{{message.text}}</p>
+                                <p class="times">{{message.date}}</p>
+                            </div>
+                        </div>
+                        <!-- /.messages -->
+                    </div>
+                </div>
+                <!-- /.chats -->
+
+                <div class="message_bar">
+                    <i class="far fa-smile"></i>
+                    <input type="text" name="message" id="message" placeholder="Scrivi un messaggio"
+                        v-model="newMessage.text" @keyup.enter="addMessage">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <!-- /.message_bar -->
+            </div>
+            <!-- /.container -->
+        </main>
+        <!-- /#site_main -->
+
+    </div>
+    <!-- /#app -->
+
+
+    <!-- Day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
