@@ -20,6 +20,12 @@ body {
     font-weight: 300;
 }
 
+.text_overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: " ... ";
+}
+
 .hidden {
     display: none;
 }
@@ -192,7 +198,7 @@ main {
 /* Container */
 .container {
     width: 70%;
-    background-image: url('/milestone-1/assets/img/mine.jpg');
+    background-image: url(../img/mine.jpg);
 }
 
 .container_header {
@@ -221,6 +227,7 @@ main {
 
 .messages {
     width: fit-content;
+    width: -moz-fit-content;
     border-radius: 10px;
     padding: 8px 10px;
     position: relative;

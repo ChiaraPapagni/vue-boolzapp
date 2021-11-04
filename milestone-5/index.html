@@ -63,10 +63,11 @@
                 <div class="chat_users">
                     <div class="chat_user" v-for="(user, i) in searchChat" @click="changeChat(i)">
                         <img :src="'./assets/img/avatar' + user.avatar + '.jpg'" alt="user.name" class="user_image">
-                        <div class="info_chat">
+                        <div class="info_chat text_overflow">
                             <p class="chat_name">{{user.name}}</p>
                             <p class="chat_last_date">{{user.messages[user.messages.length - 1].date}}</p>
-                            <p class="chat_last_message">{{user.messages[user.messages.length - 1].text}}</p>
+                            <p class="chat_last_message">{{user.messages[user.messages.length - 1].text}}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -123,6 +124,7 @@
                 <!-- /.message_bar -->
             </div>
             <!-- /.container -->
+
         </main>
         <!-- /#site_main -->
 
