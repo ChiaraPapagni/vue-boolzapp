@@ -101,7 +101,7 @@
                             <div :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" class="messages">
                                 <div class="dropdown">
                                     <i class="fas fa-chevron-down hidden chevron_down" @click="dropdownMenu(i)"></i>
-                                    <div v-if="activeMessage.index && activeMessage.show" class="dropdown_menu">
+                                    <div v-if="activeMessage.index==i && activeMessage.show" class="dropdown_menu">
                                         <a href="#info">Message info</a>
                                         <a href="#" @click="deleteMessage(i)">Delete
                                             message</a>
