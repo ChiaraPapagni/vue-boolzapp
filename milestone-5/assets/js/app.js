@@ -137,13 +137,8 @@ const app = new Vue({
         dropdownMenu(i) {
             this.activeMessage.index = i;
 
-            if (this.activeMessage.index == i) {
-                this.activeMessage.index = true;
-                this.activeMessage.show = true;
-
-                if (this.activeMessage.index && this.activeMessage.show) {
-                    this.activeMessage.show = !this.activeMessage.show;
-                }
+            if (this.activeMessage.index && this.activeMessage.show) {
+                this.activeMessage.show = !this.activeMessage.show;
             }
         },
         deleteMessage(i) {

@@ -23,7 +23,7 @@ body {
 .text_overflow {
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: " ... ";
+    text-overflow: ellipsis;
 }
 
 .hidden {
