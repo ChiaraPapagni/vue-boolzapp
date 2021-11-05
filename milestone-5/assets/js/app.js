@@ -24,7 +24,6 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-                lastAccess: dayjs('10/01/2020 16:15:22').format('HH:mm'),
             },
             {
                 name: 'Fabio',
@@ -47,7 +46,6 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
-                lastAccess: dayjs('03/20/2020 16:37:22').format('HH:mm'),
             },
             {
                 name: 'Samuele',
@@ -70,7 +68,6 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-                lastAccess: dayjs('03/28/2020 16:21:22').format('HH:mm'),
             },
             {
                 name: 'Luisa',
@@ -88,7 +85,6 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-                lastAccess: dayjs('10/01/2020 15:58:22').format('HH:mm'),
             },
         ],
         c: 0,

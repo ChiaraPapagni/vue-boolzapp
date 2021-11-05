@@ -83,7 +83,8 @@
                             class="user_image">
                         <div class="info_user">
                             <p>{{contacts[c].name}}</p>
-                            <p class="last_access">Ultimo accesso oggi alle {{contacts[c].lastAccess}}</p>
+                            <p class="last_access">Ultimo accesso oggi alle
+                                {{contacts[c].messages[contacts[c].messages.length - 1].date}}</p>
                         </div>
                     </div>
                     <div class="icons">
